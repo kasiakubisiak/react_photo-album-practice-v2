@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
 
-// import usersFromServer from './api/users';
-// import photosFromServer from './api/photos';
-// import albumsFromServer from './api/albums';
+import usersFromServer from './api/users';
+import photosFromServer from './api/photos';
+import albumsFromServer from './api/albums';
 
 export const App: React.FC = () => {
   return (
