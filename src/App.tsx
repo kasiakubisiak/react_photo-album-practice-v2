@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
 
-// import usersFromServer from './api/users';
-// import photosFromServer from './api/photos';
-// import albumsFromServer from './api/albums';
+import usersFromServer from './api/users';
+import photosFromServer from './api/photos';
+import albumsFromServer from './api/albums';
 
 export const App: React.FC = () => {
   return (
@@ -180,18 +180,31 @@ export const App: React.FC = () => {
             </thead>
 
             <tbody>
-              <tr>
-                <td className="has-text-weight-bold">
-                  1
-                </td>
+              {photosFromServer.map(photo => (
+                <>
+                  <tr>
+                    <td className="has-text-weight-bold">
+                      {photo.id}
+                    </td>
 
-                <td>accusamus beatae ad facilis cum similique qui sunt</td>
-                <td>quidem molestiae enim</td>
-
-                <td className="has-text-link">
-                  Max
-                </td>
-              </tr>
+                    <td>{photo.title}</td>
+                    <td>
+                      {albumsFromServer
+                        .find(album => album.id === photo.albumId)?.title}
+                    </td>
+                    <td className={usersFromServer
+                      .find(user => user.id === albumsFromServer
+                        .find(album => album.id === photo.albumId)?.userId)?.sex
+                      === 'm' ? 'has-text-link' : 'has-text-danger'}
+                    >
+                      {usersFromServer
+                        .find(user => user.id === albumsFromServer
+                          .find(album => album.id
+                          === photo.albumId)?.userId)?.name}
+                    </td>
+                  </tr>
+                </>
+              ))}
             </tbody>
           </table>
         </div>
