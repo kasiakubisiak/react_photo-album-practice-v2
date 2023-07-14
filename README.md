@@ -29,7 +29,7 @@ Implement as much options below as you can:
 ## Instructions
 - Fork, clone and run `npm i`
 - fix the DEMO LINK below (use your github username and the repo name)
-  - [DEMO LINK](https://suaby514.github.io/react_photo-album-practice-v2)
+  - [DEMO LINK](https://kacper-lyczba.github.io/react_photo-album-practice-v2)
 - implement tasks one by one (You can do it in the `App.tsx`)
 - `commit`, `push` and `deploy` after each task
 - Send a link to your `App.tsx` file to your personal Slack channel (for example #fe_apr22_misha_hrynko)
